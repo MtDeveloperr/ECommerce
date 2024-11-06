@@ -1,6 +1,13 @@
-﻿namespace ECommerce.Catalog.Services.ProductDetailServices
+﻿using ECommerce.Catalog.DTOs.ProductDetailDtos;
+
+namespace ECommerce.Catalog.Services.ProductDetailServices
 {
-    public class IProductDetailService
+    public interface IProductDetailService
     {
+        Task<List<ResultProductDetailDto>> GetAllProductDetailAsync();
+        Task<GetByIdProductDetailDto> GetProductDetailByIdAsync(string productDetailId);
+        Task CreateProductDetailAsync(CreateProductDetailDto createProductDetailDto);
+        Task UpdateProductDetailAsync(UpdateProductDetailDto updateProductDetailDto);
+        Task DeleteProductDetailAsync(string productDetailId);
     }
 }
